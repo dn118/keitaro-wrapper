@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кампании · Keitaro Wrapper</title>
+<link rel="stylesheet" href="/style.css">
+<script defer src="/app.js"></script>
+</head>
+<body>
+<header><div class="bar"><span class="logo">K</span><strong>Keitaro Wrapper</strong><a href="/docs">API ↗</a></div></header>
+<main>
+  <h1>Кампании</h1>
+  <nav aria-label="Разделы">
+    <button type="button" data-panel="edit" aria-pressed="true">Редактор</button>
+    <button type="button" data-panel="create" aria-pressed="false">Новая кампания</button>
+  </nav>
+  <p id="notice" role="status" hidden></p>
+  <section id="edit">
+    <form id="selection" class="card fields">
+      <label class="wide">Кампания<select id="campaign" required></select></label>
+      <label>С<input type="date" name="start" required></label>
+      <label>По<input type="date" name="end" required></label>
+      <button class="primary">Обновить</button>
+    </form>
+    <div id="workspace"></div>
+  </section>
+  <section id="create" class="card" hidden>
+    <h2>Новая кампания</h2>
+    <form id="creator" class="create-grid">
+      <label>Название<input name="name" required maxlength="100" pattern="[A-Za-z0-9_\-]+" spellcheck="false"></label>
+      <label>Страна<input name="country" required maxlength="2" minlength="2" placeholder="UZ" autocapitalize="characters" spellcheck="false"></label>
+      <label>Домен<select name="domain_id" required></select></label>
+      <label>Группа<select name="group_id" required></select></label>
+      <label>Источник<select name="traffic_source_id" required></select></label>
+      <label>Оффер<select name="offer_id" required></select></label>
+      <p class="help">Переходы из выбранной страны направляются на Google. Остальные переходы направляются на оффер.</p>
+      <div><button class="primary">Создать кампанию</button></div>
+    </form>
+  </section>
+</main>
+</body>
+</html>

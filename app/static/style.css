@@ -1,0 +1,39 @@
+:root{font-family:system-ui,sans-serif;color:#192b29;background:#f2f5f4;line-height:1.4;--green:#0b6559;--line:#dbe4e1}
+*{box-sizing:border-box}
+body{margin:0}
+header{background:#102e2a;color:#fff}
+.bar,main{max-width:1160px;margin:auto;padding-inline:24px}
+.bar{height:64px;display:flex;align-items:center;gap:12px}
+.bar a{margin-left:auto;color:#dcf3ef;font-size:.9rem}
+.logo{display:grid;place-items:center;background:#a6ead8;color:#102e2a;border-radius:9px;width:34px;height:34px;font-weight:800}
+main{padding-top:36px;padding-bottom:48px}
+h1{font-size:clamp(2rem,5vw,3rem);letter-spacing:-.055em;margin:0 0 16px}
+h2{font-size:1.2rem;margin:0 0 14px}
+nav{display:flex;gap:8px;margin-bottom:20px}
+button,input,select{font:inherit;border:1px solid var(--line);border-radius:8px;background:white;color:inherit;min-height:42px;padding:8px 12px}
+select,input{width:100%;min-width:0}
+button{cursor:pointer;white-space:nowrap}
+button:hover:not(:disabled){border-color:var(--green)}
+button:disabled{opacity:.5;cursor:default}
+button[aria-pressed=true]{background:#d8eee8;border-color:#b9ddd5;color:#174e44}
+button.primary{background:var(--green);color:white;border-color:var(--green);font-weight:600}
+button.danger{color:#9c3536}
+.card{border:1px solid var(--line);background:white;border-radius:14px;padding:20px;margin-bottom:16px}
+.fields,.create-grid{display:grid;gap:14px;align-items:end}
+.fields{grid-template-columns:minmax(180px,2fr) repeat(2,minmax(135px,1fr)) auto}
+.create-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:800px}
+label{display:grid;gap:6px;font-size:.88rem;font-weight:600;min-width:0}
+.help{grid-column:1/-1;color:#536860;margin:0}
+#notice{padding:11px 14px;border-radius:8px;background:#e0f0eb}
+#notice.error{background:#fae7e6;color:#842b29}
+.table-wrap{overflow:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+td,th{padding:10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{color:#526964;background:#f3f7f6;font-weight:600}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+h3{margin:0;font-size:1rem}
+.inline{display:flex;gap:10px;align-items:center}
+.inline select{max-width:420px}
+.muted{color:#536860;font-size:.9rem}
+[hidden]{display:none!important}
+@media(max-width:680px){main,.bar{padding-inline:14px}.fields{grid-template-columns:1fr 1fr}.wide{grid-column:1/-1}.create-grid{grid-template-columns:1fr}.card{padding:14px}.inline{align-items:stretch;flex-direction:column}.inline select{max-width:none}}
